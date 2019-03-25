@@ -1,17 +1,17 @@
 # Realtime Radio Station iOS App
 
-##Introduction
+## Introduction
 
 This application allows a user to DJ a radio station or listen to one that has been created. It uses PubNub's global data stream network broadcast and listen in realtime.
 
 Searching for tracks to add to a playlist is handled through the iTunes Search API. Those tracks are played using the Apple Music API. This app has been written for the following tutorial, https://www.pubnub.com/blog/2016-07-07-realtime-radio-station-application-using-apple-music-and-itunes-search-apis/.
 
-##Code samples
+## Code samples
 
-###DJ a Radio station
+### DJ a Radio station
 ![DJ a radio station demo] (https://i.imgsafe.org/e9cd8be358.gif)
 
-####Search iTunes and display results
+#### Search iTunes and display results
 Once it’s confirmed that the user is a Apple Music member, the searchItunes() function will use the iTunes Search API to make a GET request for whatever input the user provided from the searchBarSearchButtonClicked() function:
 
 ```swift
@@ -78,7 +78,7 @@ func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSInde
 }
 ```
 
-####DJ the Radio Station
+#### DJ the Radio Station
 Once a user has their own radio station, the tracks they added to their queue will begin to play. With PubNub’s Presence feature, we can detect when a user has joined our channel. Once they do, we will send out the track data and current playback time so they can listen at the same playback position on their device.
 ````swift
 //Listen if a user joins and and publish the trackId, currentPlaybackTime, trackName and artistName to the current channel
@@ -127,7 +127,7 @@ The DJ is also listening for up and down vote messages on this channel to know i
     }        
 ````
 
-###Listen to a Radio Station
+### Listen to a Radio Station
 
 ![DJ a radio station demo] (https://i.imgsafe.org/eaa1dafa05.gif)
 
@@ -192,9 +192,9 @@ They can also send their upvotes and downvotes by simply publishing to the chann
         }
     }
 ````
-##Installation
+## Installation
 
-###Installing PubNub with CocoaPods
+### Installing PubNub with CocoaPods
 If you’ve never used CocoaPods before, check out how to [install CocoaPods and use it](https://cocoapods.org/). The Podfile for this project will look like this:
 ````swift
 source 'https://github.com/CocoaPods/Specs.git'
@@ -205,9 +205,9 @@ target 'RadioStation' do
   pod 'Alamofire', '~> 3.4'
 end
 ````
-##Credits
+## Credits
 
-###App Icons
+### App Icons
 "dj.png" - Created by Sergey Demushkin from Noun Project
 
 "fast_forward.png" - Created by Alex Audo Samora from Noun Project
